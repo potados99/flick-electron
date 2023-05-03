@@ -1,14 +1,23 @@
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, ipcMain} = require('electron');
+const path = require('path');
 
-const createWindow = () => {
+const createWindow = async () => {
   const win = new BrowserWindow({
-    width: 500,
-    height: 800,
+    width: 350,
+    height: 550,
+    frame: false,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: true,
+      preload: path.join(__dirname, 'preload.js')
+    }
   });
 
-  win.loadURL('https://drop.potados.com');
-}
+  await win.loadURL('http://localhost:3000');
 
-console.log('hello!');
+  ipcMain.on('window-control', (event, args) => {
+    win[args]();
+  });
+}
 
 app.whenReady().then(createWindow);
