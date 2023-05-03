@@ -13,7 +13,7 @@ const createWindow = async () => {
     }
   });
 
-  await win.loadURL('http://localhost:3000');
+  await win.loadURL('https://drop.potados.com');
 
   ipcMain.on('window-control', (event, args) => {
     win[args]();
