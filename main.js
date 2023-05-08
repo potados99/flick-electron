@@ -3,6 +3,7 @@ const path = require('path');
 
 const createWindow = async () => {
   const win = new BrowserWindow({
+    title: 'Flick',
     width: 350,
     height: 550,
     frame: false,
@@ -13,7 +14,7 @@ const createWindow = async () => {
     }
   });
 
-  await win.loadURL('https://drop.potados.com');
+  await win.loadURL('https://flick.potados.com');
 
   ipcMain.on('window-control', (event, args) => {
     win[args]();
