@@ -4,6 +4,7 @@ function init() {
   // Show title bar because it is running on Electron.
   window.onload = () => {
     document.querySelector('x-title').setAttribute('show', 1);
+    document.querySelector('html').className = 'bordered';
   }
 
   // When document has loaded, initialise
