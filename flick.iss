@@ -1,5 +1,5 @@
 #define MyAppName "Flick"
-#define MyAppVersion "0.1"
+#define MyAppVersion "1.0"
 #define MyAppPublisher "Potados"
 #define MyAppURL "https://tumblbug.com/flick"
 #define MyAppExeName "Flick.exe"
@@ -28,7 +28,7 @@ Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
 
-[Languages]                                             
+[Languages]
 Name: "Korean"; MessagesFile: "{#MyAppProjectPath}\Korean.isl"
 
 [Tasks]
