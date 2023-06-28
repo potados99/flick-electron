@@ -1,9 +1,9 @@
 #define MyAppName "Flick"
 #define MyAppVersion "0.1"
-#define MyAppPublisher "The Potato Baking Company"
+#define MyAppPublisher "Potados"
 #define MyAppURL "https://tumblbug.com/flick"
 #define MyAppExeName "Flick.exe"
-#define MyAppSolutionPath "C:\Users\Administrator\source\repos\flick-electron"
+#define MyAppProjectPath "C:\Users\Administrator\source\repos\flick-electron"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -20,20 +20,22 @@ DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=commandline
-OutputBaseFilename=FocusTimer
-SetupIconFile={#MyAppSolutionPath}\icon.ico
+OutputBaseFilename=Flick
+SetupIconFile={#MyAppProjectPath}\icon.ico
+UninstallDisplayIcon={app}\{#MyAppExeName}
+UninstallDisplayName={#MyAppName}
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
 
-[Languages]
-Name: "Korean"; MessagesFile: "{#MyAppSolutionPath}\Korean.isl"
+[Languages]                                             
+Name: "Korean"; MessagesFile: "{#MyAppProjectPath}\Korean.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: checkedonce
 
 [Files]
-Source: "{#MyAppSolutionPath}\build\Flick-win32-x64\*"; DestDir: "{app}"; Flags: recursesubdirs ignoreversion
+Source: "{#MyAppProjectPath}\build\Flick-win32-x64\*"; DestDir: "{app}"; Flags: recursesubdirs ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
