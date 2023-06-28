@@ -3,7 +3,7 @@ const path = require('path');
 
 const createWindow = async () => {
   const win = new BrowserWindow({
-    icon: 'logo_transparent_128x128.png',
+    icon: 'icon.png',
     title: 'Flick',
     width: 350,
     height: 550,
